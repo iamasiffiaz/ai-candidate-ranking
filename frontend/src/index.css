@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-slate-50 text-gray-900;
+  }
+}
+
+@layer components {
+  /* Primary action button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 active:bg-blue-800
+           text-white font-semibold py-2 px-4 rounded-lg transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2
+           focus:ring-blue-500 focus:ring-offset-2 shadow-sm;
+  }
+
+  /* Secondary / outline button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-white hover:bg-gray-50 active:bg-gray-100
+           text-gray-700 font-semibold py-2 px-4 rounded-lg border border-gray-300
+           transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  /* Destructive button */
+  .btn-danger {
+    @apply inline-flex items-center justify-center bg-red-600 hover:bg-red-700
+           text-white font-semibold py-2 px-4 rounded-lg transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Standard form input */
+  .input-field {
+    @apply block w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm
+           placeholder-gray-400 bg-white
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+           transition-colors duration-150;
+  }
+
+  /* Card container */
+  .card {
+    @apply bg-white rounded-2xl border border-gray-200 shadow-sm p-6;
+  }
+
+  /* Small badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+}
