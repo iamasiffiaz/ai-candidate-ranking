@@ -300,4 +300,4 @@ The Vite dev server proxies `/api` to `http://localhost:8000`.
 
 ## 📄 License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT © 2026 [Asif Fiaz](https://github.com/iamasiffiaz) — see [LICENSE](LICENSE) for details.
