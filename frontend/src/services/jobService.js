@@ -2,7 +2,7 @@ import api from './api'
 
 export const jobService = {
   getJobs: async (params = {}) => {
-    const { data } = await api.get('/jobs', { params })
+    const { data } = await api.get('/jobs/', { params })
     return data
   },
 
@@ -12,7 +12,7 @@ export const jobService = {
   },
 
   createJob: async (jobData) => {
-    const { data } = await api.post('/jobs', jobData)
+    const { data } = await api.post('/jobs/', jobData)
     return data
   },
 

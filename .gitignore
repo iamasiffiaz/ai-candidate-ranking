@@ -17,6 +17,12 @@ env/
 # Uploads (user data should not be committed)
 backend/uploads/
 
+# Local Qdrant on-disk storage
+backend/qdrant_storage/
+
+# Python virtual environment (ranking/)
+ranking/
+
 # Node
 node_modules/
 frontend/dist/

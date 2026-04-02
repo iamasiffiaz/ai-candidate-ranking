@@ -7,7 +7,7 @@ from app.core.database import get_db
 from app.core.security import verify_token
 from app.models.user import User, UserRole
 
-security = HTTPBearer()
+security = HTTPBearer(auto_error=False)
 
 
 async def get_current_user(
@@ -18,6 +18,12 @@ async def get_current_user(
     Dependency that validates the Bearer JWT and returns the authenticated User.
     Raises 401 if the token is missing, invalid, or the user is inactive.
     """
+    if not credentials:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Not authenticated",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
     payload = verify_token(credentials.credentials)
     if not payload:
         raise HTTPException(

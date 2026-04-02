@@ -32,13 +32,17 @@ def get_embedding_model() -> SentenceTransformer:
 
 
 def get_qdrant_client() -> QdrantClient:
-    """Lazy-initialize Qdrant client."""
+    """Lazy-initialize Qdrant client (local file mode or remote server)."""
     global _qdrant_client
     if _qdrant_client is None:
-        _qdrant_client = QdrantClient(
-            host=settings.QDRANT_HOST,
-            port=settings.QDRANT_PORT,
-        )
+        if settings.QDRANT_LOCAL_PATH:
+            logger.info(f"Using local Qdrant storage at: {settings.QDRANT_LOCAL_PATH}")
+            _qdrant_client = QdrantClient(path=settings.QDRANT_LOCAL_PATH)
+        else:
+            _qdrant_client = QdrantClient(
+                host=settings.QDRANT_HOST,
+                port=settings.QDRANT_PORT,
+            )
     return _qdrant_client
 
 
