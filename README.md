@@ -229,15 +229,27 @@ The Vite dev server proxies `/api` to `http://localhost:8000`.
 
 ## 🖼️ Screenshots
 
-> _Replace placeholders with actual screenshots after running the app._
-
-| Screen | Description |
+### Login & Registration
+| | |
 |---|---|
-| ![Login](docs/screenshots/login.png) | Modern login page |
-| ![Dashboard](docs/screenshots/dashboard.png) | Overview with stats |
-| ![Jobs](docs/screenshots/jobs.png) | Job listings with actions |
-| ![Rankings](docs/screenshots/rankings.png) | AI-ranked candidate list |
-| ![Candidate](docs/screenshots/candidate.png) | Candidate profile with AI summary |
+| ![Login](docs/screenshots/login.png) | ![Register](docs/screenshots/register.png) |
+| Sign in to your recruiter account | Create a new Admin or Recruiter account |
+
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+> Overview of active jobs, total resumes, and quick actions with recent job listings.
+
+### Job Descriptions
+![Jobs](docs/screenshots/jobs.png)
+> Manage job postings — create, edit, upload resumes, view rankings, or delete.
+
+### AI Candidate Rankings
+![Rankings](docs/screenshots/rankings.png)
+> AI-ranked candidates with cosine similarity scores for a selected job.
+
+### API Documentation
+![API Docs](docs/screenshots/api-docs.png)
+> Interactive Swagger UI available at `/api/docs` — all endpoints documented and testable.
 
 ---
 
@@ -269,7 +281,7 @@ The Vite dev server proxies `/api` to `http://localhost:8000`.
 | **Embeddings** | `sentence-transformers` (`all-MiniLM-L6-v2`) |
 | **LLM** | Ollama (Llama3 / Gemma2 / Mistral) |
 | **PDF** | PyMuPDF (text extraction) · ReportLab (PDF reports) |
-| **Auth** | JWT (python-jose) · bcrypt (passlib) |
+| **Auth** | JWT (python-jose) · bcrypt |
 | **Serving** | Nginx (frontend) · Uvicorn (backend) |
 | **Container** | Docker · docker-compose |
 
